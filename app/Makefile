@@ -2,7 +2,7 @@ TAG ?= latest
 REGISTRY_ID ?= 089370973671
 REPOSITORY_REGION ?= eu-central-1
 APP_NAME ?= app
-ENV_NAME ?= stage
+ENV_NAME ?= main
 NAME_CONTAINER ?= nginx
 REPO_NAME = $(REGISTRY_ID).dkr.ecr.$(REPOSITORY_REGION).amazonaws.com/${APP_NAME}-${ENV_NAME}-${NAME_CONTAINER}
 
