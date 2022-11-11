@@ -65,5 +65,5 @@ module "codebuild" {
   repo_url            = var.repo_url
   branch_pattern      = var.branch_pattern
   git_trigger_event   = var.git_trigger_event
-  build_spec_file     = "./buildspec.yml"
+  build_spec_file     = ".config/buildspec.yml"
 }
