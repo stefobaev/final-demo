@@ -2,7 +2,7 @@
 variable "bucket_name" {
   type        = string
   description = "S3 Bucket name"
-  default     = "nginx-main-eu-central-1"
+  default     = "nginx-stage-eu-central-1"
 }
 
 variable "aws_region" {
@@ -33,7 +33,7 @@ variable "name_container" {
 }
 
 variable "web_server_image" {
-  default = "089370973671.dkr.ecr.eu-central-1.amazonaws.com/app-test-nginx"
+  default = "089370973671.dkr.ecr.eu-central-1.amazonaws.com/app-main-nginx"
 }
 
 variable "image_tag" {
