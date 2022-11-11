@@ -74,7 +74,7 @@ variable "ecs_task_role_name" {
 
 variable "web_server_image" {
   description = "The web server image to run in the ECS cluster"
-  default     = "089370973671.dkr.ecr.eu-central-1.amazonaws.com/app-test-nginx"
+  default     = "089370973671.dkr.ecr.eu-central-1.amazonaws.com/app-main-nginx"
 }
 
 variable "web_server_count" {
