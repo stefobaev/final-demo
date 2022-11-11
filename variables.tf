@@ -1,4 +1,3 @@
-
 variable "bucket_name" {
   type        = string
   description = "S3 Bucket name"
@@ -62,5 +61,5 @@ variable "git_trigger_event" {
 }
 
 variable "app_count" {
-  default = 1
+  default = 3
 }
