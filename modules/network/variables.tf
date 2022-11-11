@@ -40,7 +40,7 @@ locals {
 
 variable "app_port" {
   description = "The application port"
-  default     = 80
+  default     = 5000
 }
 
 variable "app_target_port" {
