@@ -39,7 +39,7 @@ module "network" {
   aws_dns             = true
   env                 = var.env
   app                 = var.app
-  app_port            = 80
+  app_port            = 5000
   app_target_port     = 80
   health_check_path   = "/"
   name_container      = var.name_container
