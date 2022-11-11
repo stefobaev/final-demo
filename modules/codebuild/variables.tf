@@ -18,7 +18,7 @@ variable "app" {
   type = string
 }
 variable "build_spec_file" {
-  default = "buildspec.yml"
+  default = "config/buildspec.yml"
 }
 variable "vpc_id" {
   type        = string
