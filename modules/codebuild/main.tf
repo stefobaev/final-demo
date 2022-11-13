@@ -76,7 +76,7 @@ resource "aws_codebuild_project" "project" {
 
 }
 
-resource "aws_codebuild_webhook" "develop_webhook" {
+resource "aws_codebuild_webhook" "main_webhook" {
   project_name = aws_codebuild_project.project.name
 
   filter_group {
