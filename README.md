@@ -10,7 +10,7 @@ The solution creates AWS infrastructure for development and production environme
 
 The repo contains the next components:
 
-    Terraform project
+   Terraform project
         Web application
         Root Terraform module
         Terraform modules
@@ -19,7 +19,7 @@ The repo contains the next components:
             Init build - Builds and pushes initial Docker image to ECR repository
             ECS cluster - Creates a VPC and a ECS cluster
             Codebuild - Creates a Codebuild project
-    Presentation
+   Presentation
 
 Folders and Files
         terraform.tf - Terraform configuration
@@ -44,22 +44,22 @@ Folders and Files
 Implemention
 Preparation
 
-    Create an account on AWS
-    Install the required version of Terraform, AWS CLI, and Docker
-    Download the repo content
-    Obtain Github token
-    Create secrets.tfvars and add next content "github_oauth_token = YOUR GITHUB TOKEN"
-    Change variable values in *.tfvars
+   Create an account on AWS
+   Install the required version of Terraform, AWS CLI, and Docker
+   Download the repo content
+   Obtain Github token
+   Create secrets.tfvars and add next content "github_oauth_token = YOUR GITHUB TOKEN"
+   Change variable values in *.tfvars
 
 Deployment
 Initial step
 
-    Add AWS AIM user credentials to ~/.aws/credentials
+   Add AWS AIM user credentials to ~/.aws/credentials
 
 terraform init
 terraform apply -target=module.s3_terraform_state --var-file=./config/main.tfvars
 
-    Uncomment backend "s3" in terraform.tf file
+   Uncomment backend "s3" in terraform.tf file
     
 ###########################
 #you can apply all in once#
@@ -78,35 +78,35 @@ terraform apply -target=module.init-build --var-file=./config/main.tfvars
 terraform apply -target=module.network --var-file=./config/main.tfvars
 terraform apply -target=module.codebuild --var-file=./config/main.tfvars --var-file=./config/secrets.tfvars
 
-    Check results
-        Go to your AWS account and check created infrastructure resources
-        Go to the DNS name created Application Load Balancer and check an information on a web page
+   Check results
+       Go to your AWS account and check created infrastructure resources
+       Go to the DNS name created Application Load Balancer and check an information on a web page
 
-    Change app/templates/index.html file in local git directory and push changes to your github repo to branch "main"
+   Change app/templates/index.html file in local git directory and push changes to your github repo to branch "main"
 
-    Check results
-        Go to your AWS account and check created infrastructure resources
-        Go to the DNS name created Application Load Balancer and check an information on a web page
+   Check results
+       Go to your AWS account and check created infrastructure resources
+       Go to the DNS name created Application Load Balancer and check an information on a web page
 
 #FROM HERE IF YOU HAVE SECOND OR EVERY NEXT BRANCH(environment) FOLLOW BELLOW COMMANDS#
 
 
 Steps for NEXT  environment
 
-    Copy terraform project to your github repo to branch "name" (backend "s3" for "name" in terraform.tf file should be uncommented)
+   Copy terraform project to your github repo to branch "name" (backend "s3" for "name" in terraform.tf file should be uncommented)
 
-    Delete .terraform, terraform.tfstate, terraform.tfstate.backup, .terraform.lock.hcl files from your local machine
+   Delete .terraform, terraform.tfstate, terraform.tfstate.backup, .terraform.lock.hcl files from your local machine
 
-    Comment backend "s3" for "name" in terraform.tf file
+   Comment backend "s3" for "name" in terraform.tf file
 
-    Go to  and run:
+   Go to  and run:
 
 terraform init
 terraform apply -target=module.s3_terraform_state --var-file=./config/"name".tfvars
 
-    Uncomment backend "s3" for "name" in terraform.tf file
+   Uncomment backend "s3" for "name" in terraform.tf file
 
-    Go to  and run (use your ./terraform/config/secrets.tfvars file):
+   Go to  and run (use your ./terraform/config/secrets.tfvars file):
 
 terraform init
 terraform apply -target=module.ecr --var-file=./config/"name".tfvars
@@ -114,16 +114,16 @@ terraform apply -target=module.init-build --var-file=./config/"name.tfvars
 terraform apply -target=module.network --var-file=./config/"name".tfvars
 terraform apply -target=module.codebuild --var-file=./config/"name.tfvars --var-file=./config/secrets.tfvars
 
-    Check results
-        Go to your AWS account and check created infrastructure resources
-        Go to the DNS name created Application Load Balancer and check an information on a web page
+   Check results
+       Go to your AWS account and check created infrastructure resources
+       Go to the DNS name created Application Load Balancer and check an information on a web page
 
-    Change app/templates/index.html file in local git directory and push changes to your github repo to branch "name"
+   Change app/templates/index.html file in local git directory and push changes to your github repo to branch "name"
 
-    Check results
-        Go to your AWS account and check created infrastructure resources
-        Go to the DNS name created Application Load Balancer and check an information on a web page
+   Check results
+       Go to your AWS account and check created infrastructure resources
+       Go to the DNS name created Application Load Balancer and check an information on a web page
 
 Final step
 
-    Delete created infrastructure
+   Delete created infrastructure
