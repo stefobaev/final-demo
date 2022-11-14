@@ -88,9 +88,8 @@ terraform apply -target=module.codebuild --var-file=./config/main.tfvars --var-f
         Go to your AWS account and check created infrastructure resources
         Go to the DNS name created Application Load Balancer and check an information on a web page
 
-#######################################################################################
 #FROM HERE IF YOU HAVE SECOND OR EVERY NEXT BRANCH(environment) FOLLOW BELLOW COMMANDS#
-#######################################################################################
+
 
 Steps for NEXT  environment
 
